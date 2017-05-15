@@ -87,3 +87,54 @@ function createSubBlock(b){
     masDiv.innerHTML = b;
     document.getElementById('divWrap').appendChild(masDiv);
 }
+
+
+var someBlock = document.querySelectorAll('.numberBlock');
+
+for (var i=0; i< someBlock.length; i++){
+    someBlock[i].onclick = clickBlock;
+}
+
+var first_block;
+var first;
+var second_block;
+var second;
+var key=1;
+var out ='';
+function clickBlock(){
+    if(key==1){
+        first_block = this;
+        first = this.innerHTML;
+        console.log(first);
+    }
+    else{
+        second_block = this;
+        second = this.innerHTML;
+        key=0;
+        if(first==second && first_block!=second_block){
+            document.querySelector('#divWrap').removeChild(second_block);
+            document.querySelector('#divWrap').removeChild(first_block);
+        }
+    }
+    key++;
+
+}
+
+
+// divWrap.addEventListener('click', clickBlock)
+//
+//
+// var counter = 0;
+// var xy=[];
+// var first;
+//
+// function clickBlock(event){
+//     // console.log(event);
+//     if (counter == 2){
+//
+//     }
+//     else {
+//         first = event.srcElement.innerHTML;
+//         console.log(first)
+//     }
+// }
