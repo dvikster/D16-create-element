@@ -100,8 +100,8 @@ var first;
 var second_block;
 var second;
 var key=1;
-var out ='';
 function clickBlock(){
+
     if(key==1){
         first_block = this;
         first = this.innerHTML;
@@ -112,8 +112,10 @@ function clickBlock(){
         second = this.innerHTML;
         key=0;
         if(first==second && first_block!=second_block){
-            document.querySelector('#divWrap').removeChild(second_block);
-            document.querySelector('#divWrap').removeChild(first_block);
+            first_block.style.background = 'red';
+            second_block.style.background = 'red';
+            // document.querySelector('#divWrap').removeChild(second_block);
+            // document.querySelector('#divWrap').removeChild(first_block);
         }
     }
     key++;
